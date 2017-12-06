@@ -56,4 +56,9 @@ typings/
 
 # dotenv environment variables file
 .env
+package-lock.json
+.babelrc
+webpack.config.js
+dist/
+node_modules/
 
