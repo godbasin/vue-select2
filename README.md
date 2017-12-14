@@ -73,7 +73,5 @@ export default {
   - callback when option selected
   - return value
   - parmas: `option`(`id` or `string`)
-- `change`
-  - callback when option selected
-  - return option
-  - parmas: `option`(`{id: value, text: key}` or `string`)
+- `disabled`
+  - if select is disabled

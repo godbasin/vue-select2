@@ -1,6 +1,6 @@
 <template>
   <div>
-    <select class="form-control" :placeholder="placeholder" :value="innerValue"></select>
+    <select class="form-control" :placeholder="placeholder" :value="innerValue" :disabled="disabled"></select>
   </div>
 </template>
 
@@ -27,6 +27,10 @@ export default {
     options: {
       type: Array,
       default: []
+    },
+    disabled: {
+      type: Boolean,
+      default: false
     },
     value: null
   },
