@@ -38,6 +38,11 @@ export default {
     options (val) {
       if(val && val.length){
         this.select2.select2({data: val});
+        const {id, text} = val[0];
+        this.$emit("change", id);
+        this.$emit("select", {id, text});
+        this.innerValue = text;        
+        this.select2.select2('val', [id]);
         this.select2.trigger('change');
       }
     },
