@@ -1,11 +1,8 @@
 {
   "name": "v-select2-component",
-  "version": "0.0.8",
+  "version": "0.1.0",
   "description": "select2 component in vue.",
   "main": "src/Select2.vue",
-  "scripts": {
-    "build": "rm -rf ./dist && webpack --config ./webpack.config.js"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/godbasin/vue-select2.git"
