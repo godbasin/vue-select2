@@ -43,14 +43,19 @@ export default {
     }
   },
   methods: {
-    setOption(val) {
-      if (val && val.length) {
-        this.select2.select2({ data: val });
+    setOption(val = []) {
+      this.select2.empty();
+      this.select2.select2({ data: val });
+      const hasValue = val.find(x => x.id == this.value);
+      if ((!this.value || !hasValue) && val.length) {
         const { id, text } = val[0];
         this.$emit("change", id);
         this.$emit("select", { id, text });
-        this.select2.select2("val", [id]);
-        this.select2.trigger("change");
+      }
+      if(hasValue){
+        this.setValue(hasValue.id)
+      }else{
+      this.select2.trigger("change");
       }
     },
     setValue(val) {
@@ -69,7 +74,6 @@ export default {
         this.$emit("change", id);
         this.$emit("select", { id, text });
       });
-    this.setOption(this.options);
     if (this.value) {
       this.setValue(this.value);
     }
