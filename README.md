@@ -68,10 +68,18 @@ export default {
 - `options`: `option[]`
   - select options for select2
   - `option`: `{id: key, text: value}` or `string`
-- `v-model`: option value that is selected(`id` or `string`)
+- `v-model`: option value that is selected
+  - `id` or `string` while multiple is disable
+  - `id[]` or `string[]` while multiple is enable
 - `change`
-  - callback when option selected
+  - callback when option selected change
   - return value
-  - parmas: `option`(`id` or `string`)
+  - parmas: same with `v-model`
+- `select`
+  - callback when option selected
+  - parmas: `option`(`{id: value, text: key, selected: ifSelected}` or `string`)
 - `disabled`
   - if select is disabled
+- `settings`
+  - configurable settings, see [Select2 options API](https://select2.org/configuration/options-api)
+  - `setting`: `{ settingOption: value, settingOption: value }`

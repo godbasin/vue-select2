@@ -32,6 +32,10 @@ export default {
       type: Boolean,
       default: false
     },
+    settings: {
+      type: Object,
+      default: {}
+    },
     value: null
   },
   watch: {
@@ -45,21 +49,20 @@ export default {
   methods: {
     setOption(val = []) {
       this.select2.empty();
-      this.select2.select2({ data: val });
-      const hasValue = val.find(x => x.id == this.value);
-      if ((!this.value || !hasValue) && val.length) {
-        const { id, text } = val[0];
-        this.$emit("change", id);
-        this.$emit("select", { id, text });
-      }
-      if(hasValue){
-        this.setValue(hasValue.id)
-      }else{
+      this.select2.select2({ 
+         ...this.settings,
+         data: val 
+      });
+      this.select2.select2("val", []);
+      this.$emit("change", null);
       this.select2.trigger("change");
-      }
     },
     setValue(val) {
-      this.select2.select2("val", [val]);
+      if (val instanceof Array) {
+        this.select2.select2("val", [...val]);
+      } else {
+        this.select2.select2("val", [val]);
+      }
       this.select2.trigger("change");
     }
   },
@@ -67,12 +70,14 @@ export default {
     this.select2 = $(this.$el)
       .find("select")
       .select2({
+        ...this.settings,
         data: this.options
       })
-      .on("select2:select", ev => {
-        const { id, text } = ev["params"]["data"];
-        this.$emit("change", id);
-        this.$emit("select", { id, text });
+      .on("select2:select select2:unselect", ev => {
+        const { id, text, selected } = ev["params"]["data"];
+        const selectValue = this.select2.val();
+        this.$emit("change", selectValue);
+        this.$emit("select", { id, text, selected });
       });
     if (this.value) {
       this.setValue(this.value);
