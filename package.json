@@ -12,7 +12,7 @@
   "dependencies": {
     "bootstrap": "^3.3.7",
     "jquery": "^3.3.1",
-    "v-select2-component": "^0.1.6",
+    "v-select2-component": "^0.1.7",
     "vue": "^2.5.2"
   },
   "devDependencies": {
