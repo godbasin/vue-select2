@@ -1,6 +1,6 @@
 {
   "name": "v-select2-component",
-  "version": "0.1.6",
+  "version": "0.1.8",
   "description": "select2 component in vue.",
   "main": "src/Select2.vue",
   "repository": {

@@ -34,7 +34,7 @@ export default {
     },
     settings: {
       type: Object,
-      default: {}
+      default: () => {}
     },
     value: null
   },
