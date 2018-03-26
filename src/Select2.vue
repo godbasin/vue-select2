@@ -53,7 +53,6 @@ export default {
         ...this.settings,
         data: val
       });
-      this.$emit('change', null);
       this.select2.trigger('change');
     },
     setValue(val) {
