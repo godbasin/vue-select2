@@ -53,7 +53,7 @@ export default {
         ...this.settings,
         data: val
       });
-      this.select2.trigger('change');
+      this.setValue(this.value);
     },
     setValue(val) {
       if (val instanceof Array) {

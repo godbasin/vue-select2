@@ -1,6 +1,6 @@
 {
   "name": "v-select2-component",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "select2 component in vue.",
   "main": "src/Select2.vue",
   "repository": {
@@ -16,17 +16,5 @@
   "bugs": {
     "url": "https://github.com/godbasin/vue-select2/issues"
   },
-  "homepage": "https://github.com/godbasin/vue-select2#readme",
-  "devDependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-core": "^6.26.0",
-    "babel-loader": "^7.1.2",
-    "babel-preset-es2015": "^6.24.1",
-    "css-loader": "^0.28.7",
-    "style-loader": "^0.19.0",
-    "vue-loader": "^13.5.0",
-    "vue-template-compiler": "^2.5.9",
-    "webpack": "^3.10.0",
-    "babel-preset-stage-2": "^6.24.1"
-  }
+  "homepage": "https://github.com/godbasin/vue-select2#readme"
 }
