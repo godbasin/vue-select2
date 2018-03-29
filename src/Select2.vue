@@ -57,9 +57,9 @@ export default {
     },
     setValue(val) {
       if (val instanceof Array) {
-        this.select2.select2('val', [...val]);
+        this.select2.val([...val]);
       } else {
-        this.select2.select2('val', [val]);
+        this.select2.val([val]);
       }
       this.select2.trigger('change');
     }
