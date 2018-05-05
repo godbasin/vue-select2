@@ -1,6 +1,6 @@
 {
   "name": "v-select2-component",
-  "version": "0.2.3",
+  "version": "0.3.0",
   "description": "select2 component in vue.",
   "main": "src/Select2.vue",
   "repository": {
@@ -16,5 +16,9 @@
   "bugs": {
     "url": "https://github.com/godbasin/vue-select2/issues"
   },
-  "homepage": "https://github.com/godbasin/vue-select2#readme"
+  "homepage": "https://github.com/godbasin/vue-select2#readme",
+  "dependencies": {
+    "jquery": "^3.3.1",
+    "select2": "^4.0.6-rc.1"
+  }
 }

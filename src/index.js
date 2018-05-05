@@ -1,5 +1,5 @@
 import Vue from 'vue'
-const Select2 = require('./Select2.vue');
+import Select2 from './Select2.vue'
 const Select2Component = {};
 Select2Component.install = function (Vue, options) {
     Vue.component('Select2', Select2)
