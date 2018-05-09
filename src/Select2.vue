@@ -6,7 +6,8 @@
 
 <script>
 import $ from 'jquery';
-import './select2/select2.js';
+import 'select2';
+import 'select2/dist/css/select2.min.css'
 
 export default {
   name: 'Select2',
@@ -84,7 +85,3 @@ export default {
   }
 };
 </script>
-
-<style scope>
-@import './select2/select2.min.css';
-</style>
