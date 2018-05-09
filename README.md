@@ -22,9 +22,6 @@ Vue-Select2-Component is baseed on these plugins and libs(version):
 ``` cmd
 // npm install
 npm install v-select2-component --save
-
-// if you have not installed jquery
-npm install jquery --save
 ```
 
 ### Use as component
