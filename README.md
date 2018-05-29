@@ -43,7 +43,9 @@ import Select2 from 'v-select2-component';
 
 <template>
   <div>
-    <Select2 v-model="myValue" :options="myOptions" :settings="{ settingOption: value, settingOption: value }" @change="myChangeEvent($event)" @select="mySelectEvent($event)" />
+    <Select2 v-model="myValue" :options="myOptions" :settings="{ settingOption: value, settingOption: value }" @change="myChangeEvent($event)" @select="mySelectEvent($event)">
+      <option disabled value="0">Select one</option>
+    </Select2>
     <h4>Value: {{ myValue }}</h4>
   </div>
 </template>
@@ -83,8 +85,6 @@ export default {
 - `select`
   - callback when option selected
   - parmas: `option`(`{id: value, text: key, selected: ifSelected}` or `string`)
-- `disabled`
-  - if select is disabled
 - `settings`
   - configurable settings, see [Select2 options API](https://select2.org/configuration/options-api)
   - `setting`: `{ settingOption: value, settingOption: value }`
