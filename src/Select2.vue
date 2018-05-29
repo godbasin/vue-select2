@@ -37,6 +37,10 @@ export default {
       type: Object,
       default: () => {}
     },
+    multiple: {
+      type: Boolean,
+      'default': false
+    },
     value: null
   },
   watch: {
@@ -70,7 +74,8 @@ export default {
       .find('select')
       .select2({
         ...this.settings,
-        data: this.options
+        data: this.options,
+        multiple: this.multiple
       })
       .on('select2:select select2:unselect', ev => {
         const { id, text, selected } = ev['params']['data'];
