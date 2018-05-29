@@ -1,7 +1,7 @@
 <template>
-  <div>
-    <select class="form-control" :placeholder="placeholder" :disabled="disabled"></select>
-  </div>
+  <select>
+    <slot></slot>
+  </select>
 </template>
 
 <script>
@@ -21,17 +21,9 @@ export default {
     prop: 'value'
   },
   props: {
-    placeholder: {
-      type: String,
-      default: ''
-    },
     options: {
       type: Array,
       default: []
-    },
-    disabled: {
-      type: Boolean,
-      default: false
     },
     settings: {
       type: Object,
@@ -67,7 +59,6 @@ export default {
   },
   mounted() {
     this.select2 = $(this.$el)
-      .find('select')
       .select2({
         ...this.settings,
         data: this.options
