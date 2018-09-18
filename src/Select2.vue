@@ -73,10 +73,8 @@ export default {
         data: this.options
       })
       .on('select2:select select2:unselect', ev => {
-        const { id, text, selected } = ev['params']['data'];
-        const selectValue = this.select2.val();
-        this.$emit('change', selectValue);
-        this.$emit('select', { id, text, selected });
+        this.$emit('change', this.select2.val());
+        this.$emit('select', ev['params']['data']);
       });
     this.setValue(this.value);
   },
