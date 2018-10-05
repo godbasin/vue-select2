@@ -21,9 +21,16 @@
         <div class="col-md-4"><input type="text" class="form-control" v-model="inputVal" /></div>
         <div class="col-md-2"><a class="btn btn-default" @click="changeValue()">change value</a></div>
       </div>
-      <div>
+      <div class="form-group">
         <label class="col-md-2 control-label" style="text-align: right;">Change Options</label>
         <div class="col-md-4"><a class="btn btn-default" @click="changeOptions()">change options</a></div>
+      </div>
+      <div class="form-group">
+        <label class="col-md-2 control-label" style="text-align: right;">Select2 with ajax</label>
+        <div class="col-md-6">
+          <Select2 v-model="ajaxOptionsSelected" :options="ajaxOptions"  :settings="{ placeholder: 'Specifies the placeholder through settings', width: '50%', ajax: ajax }" @change="ajaxChangeEvent($event)" @select="ajaxSelectEvent($event)" />
+          <p>Value: {{ ajaxOptionsSelected }}</p>
+        </div>
       </div>
     </form>
   </div>
@@ -39,7 +46,18 @@ export default {
       optionSelected: null,
       optionsSelected: null,
       inputVal: "",
-      myOptions: options1 // or [{id: key, text: value}, {id: key, text: value}]
+      myOptions: options1, // or [{id: key, text: value}, {id: key, text: value}]
+      ajaxOptions: [],
+      ajax: {
+        url: 'https://jsonplaceholder.typicode.com/posts',
+        processResults: function (data) {
+          // Tranforms the top-level key of the response object from 'items' to 'results'
+          return {
+            results: data.map(x => {return {id:x.id, text: x.title}})
+          };
+        }
+      },
+      ajaxOptionsSelected: null
     };
   },
   methods: {
@@ -58,7 +76,14 @@ export default {
     changeValue() {
       this.optionSelected = this.inputVal;
       this.optionsSelected = [this.inputVal];
-    }
+    },
+    ajaxChangeEvent(val) {
+      console.log('ajaxChangeEvent', val);
+      // alert(val);
+    },
+    ajaxSelectEvent({ id, text, selected }) {
+      console.log('ajaxChangeEvent', { id, text, selected });
+    },
   }
 };
 </script>
