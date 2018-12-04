@@ -38,9 +38,6 @@ new Vue({
 
 2. import into a single component.
 ``` javascript
-// import Select2Component
-import Select2 from 'v-select2-component';
-
 <template>
   <div>
     <Select2 v-model="myValue" :options="myOptions" :settings="{ settingOption: value, settingOption: value }" @change="myChangeEvent($event)" @select="mySelectEvent($event)" />
@@ -48,6 +45,9 @@ import Select2 from 'v-select2-component';
   </div>
 </template>
 <script>
+// import Select2Component
+import Select2 from 'v-select2-component';
+
 export default {
     // declare Select2Component
     components: {Select2},
