@@ -77,6 +77,10 @@ export default {
   - parmas: `option`(`{id: value, text: key, selected: ifSelected}` or `string`)
 - `disabled`
   - if select is disabled
+- `placeholder`
+  - placeholder attribute for select element
+- `name`
+  - name attribute for select element
 - `settings`
   - configurable settings, see [Select2 options API](https://select2.org/configuration/options-api)
   - `setting`: `{ settingOption: value, settingOption: value }`
