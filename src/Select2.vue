@@ -1,6 +1,6 @@
 <template>
   <div>
-    <select class="form-control" :name="name" :placeholder="placeholder" :disabled="disabled"></select>
+    <select class="form-control" :id="id" :name="name" :placeholder="placeholder" :disabled="disabled"></select>
   </div>
 </template>
 
@@ -21,6 +21,10 @@ export default {
     prop: 'value'
   },
   props: {
+    id: {
+      type: String,
+      default: ''
+    },
     name: {
       type: String,
       default: ''

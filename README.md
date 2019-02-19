@@ -79,6 +79,8 @@ export default {
   - if select is disabled
 - `placeholder`
   - placeholder attribute for select element
+- `id`
+  - id attribute for select element
 - `name`
   - name attribute for select element
 - `settings`
