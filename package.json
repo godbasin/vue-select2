@@ -1,8 +1,7 @@
 {
   "name": "v-select2-component",
-  "version": "0.3.2",
+  "version": "0.3.3",
   "description": "select2 component in vue.",
-  "main": "src/Select2.vue",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/godbasin/vue-select2.git"
@@ -16,9 +15,32 @@
   "bugs": {
     "url": "https://github.com/godbasin/vue-select2/issues"
   },
+  "main": "dist/Select2.umd.js",
+  "module": "dist/Select2.esm.js",
+  "unpkg": "dist/Select2.min.js",
+  "browser": {
+    "./sfc": "src/Select2.vue"
+  },
+  "scripts": {
+    "build": "npm run build:umd & npm run build:es & npm run build:unpkg",
+    "build:umd": "rollup --config build/rollup.config.js --format umd --file dist/Select2.umd.js",
+    "build:es": "rollup --config build/rollup.config.js --format es --file dist/Select2.esm.js",
+    "build:unpkg": "rollup --config build/rollup.config.js --format iife --file dist/Select2.min.js"
+  },
   "homepage": "https://github.com/godbasin/vue-select2#readme",
   "dependencies": {
     "jquery": "^3.3.1",
     "select2": "^4.0.6-rc.1"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-stage-2": "^6.24.1",
+    "rollup": "^0.57.1",
+    "rollup-plugin-babel": "^3.0.7",
+    "rollup-plugin-buble": "^0.19.2",
+    "rollup-plugin-vue": "^3.0.0",
+    "vue": "^2.5.16",
+    "vue-template-compiler": "^2.5.16"
   }
 }
