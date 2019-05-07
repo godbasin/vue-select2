@@ -30,7 +30,7 @@
   "homepage": "https://github.com/godbasin/vue-select2#readme",
   "dependencies": {
     "jquery": "^3.3.1",
-    "select2": "^4.0.6-rc.1"
+    "select2": "^4.0.7-rc.0"
   },
   "devDependencies": {
     "babel-core": "^6.26.3",
