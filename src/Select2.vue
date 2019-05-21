@@ -1,6 +1,6 @@
 <template>
   <div>
-    <select class="form-control" :id="id" :name="name" :placeholder="placeholder" :disabled="disabled"></select>
+    <select class="form-control" :id="id" :name="name" :placeholder="placeholder" :disabled="disabled" :required="required"></select>
   </div>
 </template>
 
@@ -38,6 +38,10 @@ export default {
       default: () => []
     },
     disabled: {
+      type: Boolean,
+      default: false
+    },
+    required: {
       type: Boolean,
       default: false
     },
