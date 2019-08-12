@@ -57,7 +57,7 @@ export default {
             myOptions: ['op1', 'op2', 'op3'] // or [{id: key, text: value}, {id: key, text: value}]
         }
     },
-    method: {
+    methods: {
         myChangeEvent(val){
             console.log(val);
         },
