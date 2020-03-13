@@ -1,37 +1,37 @@
 <template>
   <div>
-    <select class="form-control" :id="id" :name="name" :placeholder="placeholder" :disabled="disabled" :required="required"></select>
+    <select class="form-control" :id="id" :name="name" :disabled="disabled" :required="required"></select>
   </div>
 </template>
 
 <script>
-import $ from 'jquery';
-import 'select2/dist/js/select2.full';
-import 'select2/dist/css/select2.min.css'
+import $ from "jquery";
+import "select2/dist/js/select2.full";
+import "select2/dist/css/select2.min.css";
 
 export default {
-  name: 'Select2',
+  name: "Select2",
   data() {
     return {
       select2: null
     };
   },
   model: {
-    event: 'change',
-    prop: 'value'
+    event: "change",
+    prop: "value"
   },
   props: {
     id: {
       type: String,
-      default: ''
+      default: ""
     },
     name: {
       type: String,
-      default: ''
+      default: ""
     },
     placeholder: {
       type: String,
-      default: ''
+      default: "vue-select2"
     },
     options: {
       type: Array,
@@ -63,6 +63,7 @@ export default {
     setOption(val = []) {
       this.select2.empty();
       this.select2.select2({
+        placeholder: this.placeholder,
         ...this.settings,
         data: val
       });
@@ -74,24 +75,25 @@ export default {
       } else {
         this.select2.val([val]);
       }
-      this.select2.trigger('change');
+      this.select2.trigger("change");
     }
   },
   mounted() {
     this.select2 = $(this.$el)
-      .find('select')
+      .find("select")
       .select2({
+        placeholder: this.placeholder,
         ...this.settings,
         data: this.options
       })
-      .on('select2:select select2:unselect', ev => {
-        this.$emit('change', this.select2.val());
-        this.$emit('select', ev['params']['data']);
+      .on("select2:select select2:unselect", ev => {
+        this.$emit("change", this.select2.val());
+        this.$emit("select", ev["params"]["data"]);
       });
     this.setValue(this.value);
   },
   beforeDestroy() {
-    this.select2.select2('destroy');
+    this.select2.select2("destroy");
   }
 };
 </script>
