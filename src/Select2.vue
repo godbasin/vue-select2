@@ -31,7 +31,7 @@ export default {
     },
     placeholder: {
       type: String,
-      default: 'vue-select2'
+      default: ''
     },
     options: {
       type: Array,
