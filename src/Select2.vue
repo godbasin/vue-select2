@@ -1,6 +1,6 @@
 <template>
   <div>
-    <select class="form-control" :id="id" :name="name" :placeholder="placeholder" :disabled="disabled" :required="required"></select>
+    <select class="form-control" :id="id" :name="name" :disabled="disabled" :required="required"></select>
   </div>
 </template>
 
@@ -31,7 +31,7 @@ export default {
     },
     placeholder: {
       type: String,
-      default: ''
+      default: 'vue-select2'
     },
     options: {
       type: Array,
@@ -63,6 +63,7 @@ export default {
     setOption(val = []) {
       this.select2.empty();
       this.select2.select2({
+        placeholder: this.placeholder,
         ...this.settings,
         data: val
       });
@@ -81,6 +82,7 @@ export default {
     this.select2 = $(this.$el)
       .find('select')
       .select2({
+        placeholder: this.placeholder,
         ...this.settings,
         data: this.options
       })
