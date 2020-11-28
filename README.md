@@ -5,6 +5,8 @@ This project was generated with [Vue cli](https://github.com/vuejs/vue-cli) vers
 ## Instructions
 This project is built for showing how to use v-select2-component.
 
+**If you want to use it in Vue 3.0, check [vue3-select2-component](https://github.com/godbasin/vue-select2/tree/npm-publish-code-for-vue3).**
+
 # v-select2-component
 
 Source code in: [https://github.com/godbasin/vue-select2/tree/npm-publish-code](https://github.com/godbasin/vue-select2/tree/npm-publish-code).
