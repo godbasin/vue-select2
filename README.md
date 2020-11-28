@@ -1,13 +1,8 @@
-# Vue3.0 Select2 Component
-
-This project was generated with [Vue cli](https://cli.vuejs.org/) version 6.14.2.
-
-## Instructions
-This project is built for showing how to use vue3-select2-component.
-
 # vue3-select2-component
 
 Source code in: [https://github.com/godbasin/vue-select2/tree/npm-publish-code-for-vue3](https://github.com/godbasin/vue-select2/tree/npm-publish-code-for-vue3).
+
+Demo code in: [https://github.com/godbasin/vue-select2/tree/demo-for-vue3-select-component](https://github.com/godbasin/vue-select2/tree/demo-for-vue3-select-component).
 
 ## Related Versions
 
