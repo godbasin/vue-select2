@@ -37,10 +37,12 @@
 </template>
 
 <script>
+import Select2 from 'vue3-select2-component';
 const options1 = ["1-1", "1-2", "1-3", "1-4", "1-5"];
 const options2 = ["2-1", "2-2", "2-3", "2-4", "2-5"];
 export default {
   name: "hello",
+  components: {Select2},
   data() {
     return {
       optionSelected: null,
@@ -70,7 +72,7 @@ export default {
       console.log({ id, text, selected });
     },
     changeOptions() {
-      this.myOptions = this.myOptions == options1 ? options2 : options1;
+      this.myOptions = this.myOptions.join(',') === options1.join(',') ? options2 : options1;
       console.log(this.myOptions);
     },
     changeValue() {
@@ -88,5 +90,5 @@ export default {
 };
 </script>
 <style>
-@import '../../node_modules/bootstrap/dist/css/bootstrap.min.css';
+@import '../../node_modules/bootstrap/dist/css/bootstrap.css';
 </style>

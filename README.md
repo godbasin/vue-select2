@@ -1,20 +1,18 @@
-# Vue Select2 Component
+# Vue3.0 Select2 Component
 
-This project was generated with [Vue cli](https://github.com/vuejs/vue-cli) version 2.9.1.
+This project was generated with [Vue cli](https://cli.vuejs.org/) version 6.14.2.
 
 ## Instructions
-This project is built for showing how to use v-select2-component.
+This project is built for showing how to use vue3-select2-component.
 
-**If you want to use it in Vue 3.0, check [vue3-select2-component](https://github.com/godbasin/vue-select2/tree/npm-publish-code-for-vue3).**
+# vue3-select2-component
 
-# v-select2-component
-
-Source code in: [https://github.com/godbasin/vue-select2/tree/npm-publish-code](https://github.com/godbasin/vue-select2/tree/npm-publish-code).
+Source code in: [https://github.com/godbasin/vue-select2/tree/npm-publish-code-for-vue3](https://github.com/godbasin/vue-select2/tree/npm-publish-code-for-vue3).
 
 ## Related Versions
 
-Vue-Select2-Component is baseed on these plugins and libs(version):
-- [vue(>= 2.0-release)](https://github.com/vuejs/vue)
+vue3-select2-component is baseed on these plugins and libs(version):
+- [vue(>= 3.0-beta)](https://github.com/vuejs/vue-next)
 - [jQuery](https://jquery.com/)
 - [select2](https://select2.github.io/)
 
@@ -23,25 +21,25 @@ Vue-Select2-Component is baseed on these plugins and libs(version):
 ### Install
 ``` cmd
 // npm install
-npm install v-select2-component --save
+npm install vue3-select2-component --save
 ```
 
 ### Use as component
 1. import as global component.
 ``` javascript
 // import Select2Component
-import Select2 from 'v-select2-component';
+import Select2 from 'vue3-select2-component';
+// Create a Vue application
+const app = Vue.createApp({})
 
-Vue.component('Select2', Select2);
-new Vue({
-	// ...
-})
+// Define a new global component called button-counter
+app.component('Select2', Select2)
 ```
 
 2. import into a single component.
 ``` javascript
 // import Select2Component
-import Select2 from 'v-select2-component';
+import Select2 from 'vue3-select2-component';
 
 <template>
   <div>
@@ -78,7 +76,7 @@ export default {
 - `v-model`: option value that is selected
   - `id` or `string` while multiple is disable
   - `id[]` or `string[]` while multiple is enable
-- `change`
+- `update:modelValue`
   - callback when option selected change
   - return value
   - parmas: same with `v-model`
@@ -87,6 +85,12 @@ export default {
   - parmas: `option`(`{id: value, text: key, selected: ifSelected}` or `string`)
 - `disabled`
   - if select is disabled
+- `placeholder`
+  - placeholder attribute for select element
+- `id`
+  - id attribute for select element
+- `name`
+  - name attribute for select element
 - `settings`
   - configurable settings, see [Select2 options API](https://select2.org/configuration/options-api)
   - `setting`: `{ settingOption: value, settingOption: value }`
