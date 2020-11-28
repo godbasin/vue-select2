@@ -1,13 +1,14 @@
 {
-  "name": "v-select2-component",
-  "version": "0.4.3",
-  "description": "select2 component in vue.",
+  "name": "vue3-select2-component",
+  "version": "0.1.5",
+  "description": "select2 component in vue3.",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/godbasin/vue-select2.git"
   },
   "keywords": [
     "vue",
+    "vue3",
     "select2"
   ],
   "author": "godbasin <wangbeishan@163.com> (https://github.com/godbasin)",
@@ -15,9 +16,7 @@
   "bugs": {
     "url": "https://github.com/godbasin/vue-select2/issues"
   },
-  "main": "dist/Select2.ssr.js",
-  "module": "dist/Select2.esm.js",
-  "unpkg": "dist/Select2.min.js",
+  "main": "src/Select2.vue",
   "browser": {
     "./sfc": "src/Select2.vue"
   },
@@ -26,10 +25,10 @@
     "src/**/*.vue"
   ],
   "scripts": {
-    "build": "cross-env NODE_ENV=production rollup --config build/rollup.config.js",
-    "build:ssr": "cross-env NODE_ENV=production rollup --config build/rollup.config.js --format cjs",
-    "build:es": "cross-env NODE_ENV=production rollup --config build/rollup.config.js --format es",
-    "build:unpkg": "cross-env NODE_ENV=production rollup --config build/rollup.config.js --format iife"
+    "build:publish": "vue-cli-service build --target lib --name Select2 src/Select2.vue",
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint"
   },
   "homepage": "https://github.com/godbasin/vue-select2#readme",
   "dependencies": {
@@ -37,19 +36,32 @@
     "select2": "^4.0.7-rc.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.4.4",
-    "@babel/preset-env": "^7.4.4",
-    "babel-plugin-syntax-jsx": "^6.18.0",
-    "babel-plugin-transform-vue-jsx": "^3.7.0",
-    "cross-env": "^5.2.0",
-    "minimist": "^1.2.0",
-    "rollup": "^1.12.1",
-    "rollup-plugin-babel": "^4.3.2",
-    "rollup-plugin-commonjs": "^10.0.0",
-    "rollup-plugin-replace": "^2.2.0",
-    "rollup-plugin-terser": "^4.0.4",
-    "rollup-plugin-vue": "^5.0.0",
-    "vue": "^2.6.10",
-    "vue-template-compiler": "^2.6.10"
-  }
+    "@vue/cli-plugin-babel": "~4.5.0",
+    "@vue/cli-plugin-eslint": "~4.5.0",
+    "@vue/cli-service": "~4.5.0",
+    "@vue/compiler-sfc": "^3.0.0",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^6.7.2",
+    "eslint-plugin-vue": "^7.0.0-0",
+    "vue": "^3.0.0"
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "plugin:vue/vue3-essential",
+      "eslint:recommended"
+    ],
+    "parserOptions": {
+      "parser": "babel-eslint"
+    },
+    "rules": {}
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ]
 }

@@ -16,11 +16,9 @@ export default {
       select2: null
     };
   },
-  model: {
-    event: 'change',
-    prop: 'value'
-  },
+  emits: ['update:modelValue'],
   props: {
+    modelValue: [String, Array], // previously was `value: String`
     id: {
       type: String,
       default: ''
@@ -49,15 +47,20 @@ export default {
       type: Object,
       default: () => {}
     },
-    value: null
   },
   watch: {
-    options(val) {
-      this.setOption(val);
+    options: {
+      handler(val) {
+        this.setOption(val);
+      },
+      deep: true
     },
-    value(val) {
-      this.setValue(val);
-    }
+    modelValue: {
+      handler(val) {
+        this.setValue(val);
+      },
+      deep: true
+    },
   },
   methods: {
     setOption(val = []) {
@@ -67,7 +70,7 @@ export default {
         ...this.settings,
         data: val
       });
-      this.setValue(this.value);
+      this.setValue(this.modelValue);
     },
     setValue(val) {
       if (val instanceof Array) {
@@ -87,12 +90,12 @@ export default {
         data: this.options
       })
       .on('select2:select select2:unselect', ev => {
-        this.$emit('change', this.select2.val());
+        this.$emit('update:modelValue', this.select2.val());
         this.$emit('select', ev['params']['data']);
       });
     this.setValue(this.value);
   },
-  beforeDestroy() {
+  beforeUnmount() {
     this.select2.select2('destroy');
   }
 };
