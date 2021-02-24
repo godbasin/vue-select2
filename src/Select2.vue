@@ -93,7 +93,7 @@ export default {
         this.$emit('update:modelValue', this.select2.val());
         this.$emit('select', ev['params']['data']);
       });
-    this.setValue(this.value);
+    this.setValue(this.modelValue);
   },
   beforeUnmount() {
     this.select2.select2('destroy');
