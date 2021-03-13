@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "bootstrap": "^3.3.7",
-    "v-select2-component": "^0.3.1",
+    "v-select2-component": "^0.4.7",
     "vue": "^2.5.2"
   },
   "devDependencies": {

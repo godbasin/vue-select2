@@ -78,15 +78,24 @@ export default {
 - `v-model`: option value that is selected
   - `id` or `string` while multiple is disable
   - `id[]` or `string[]` while multiple is enable
-- `change`
-  - callback when option selected change
-  - return value
-  - parmas: same with `v-model`
-- `select`
-  - callback when option selected
-  - parmas: `option`(`{id: value, text: key, selected: ifSelected}` or `string`)
 - `disabled`
   - if select is disabled
 - `settings`
   - configurable settings, see [Select2 options API](https://select2.org/configuration/options-api)
   - `setting`: `{ settingOption: value, settingOption: value }`
+
+### Events
+- `change`
+  - triggered when option selected change
+  - return value
+  - parmas: same with `v-model`
+- `select`
+  - triggered when option selected
+  - parmas: `option`(`{id: value, text: key, selected: ifSelected}` or `string`)
+- `open`
+  - triggered whenever the dropdown is opened
+- `close`
+  - triggered whenever the dropdown is closed
+- `clear`
+  - triggered whenever the dropdown is cleared
+- more events refer to [select2 events](https://select2.org/programmatic-control/events)

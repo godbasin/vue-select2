@@ -32,6 +32,12 @@
           <p>Value: {{ ajaxOptionsSelected }}</p>
         </div>
       </div>
+      <div class="form-group">
+        <label class="col-md-2 control-label" style="text-align: right;">Select2 Events</label>
+        <div class="col-md-6">
+          <Select2 @open="onOpen()" @close="onClose" @clear="onClear" :options="myOptions" :settings="{ placeholder: 'check events', width: '50%' }"  />
+        </div>
+      </div>
     </form>
   </div>
 </template>
@@ -84,6 +90,18 @@ export default {
     ajaxSelectEvent({ id, text, selected }) {
       console.log('ajaxChangeEvent', { id, text, selected });
     },
+    onOpen(e) {
+      alert(`open!`);
+      console.log('open', { e });
+    },
+    onClose(e) {
+      alert(`close!`);
+      console.log('close', { e });
+    },
+    onClear(e) {
+      alert(`clear!`);
+      console.log('clear', { e });
+    }
   }
 };
 </script>
