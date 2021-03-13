@@ -89,6 +89,24 @@ export default {
       .on('select2:select select2:unselect', ev => {
         this.$emit('change', this.select2.val());
         this.$emit('select', ev['params']['data']);
+      })
+      .on('select2:closing', ev => {
+        this.$emit('closing', ev);
+      })
+      .on('select2:close', ev => {
+        this.$emit('close', ev);
+      })
+      .on('select2:opening', ev => {
+        this.$emit('opening', ev);
+      })
+      .on('select2:open', ev => {
+        this.$emit('open', ev);
+      })
+      .on('select2:clearing', ev => {
+        this.$emit('clearing', ev);
+      })
+      .on('select2:clear', ev => {
+        this.$emit('clear', ev);
       });
     this.setValue(this.value);
   },
