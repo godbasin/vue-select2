@@ -1,4 +1,4 @@
-# Vue Select2 Component
+# Vue Select2 Component[archived]
 
 This project was generated with [Vue cli](https://github.com/vuejs/vue-cli) version 2.9.1.
 
